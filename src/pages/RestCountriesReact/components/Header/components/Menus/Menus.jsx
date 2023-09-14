@@ -1,4 +1,8 @@
-import { menuTabs } from "../../../../../constants/menuTabs"
+import { Link } from "react-router-dom"
+
+import { menuTabs } from "../../../../../../constants/menuTabs"
+
+import "./style.sass"
 
 export const Menus = () => {
     return (
@@ -7,11 +11,13 @@ export const Menus = () => {
                 menuTabs.map(
                     menu => {
                         return (
-                            <div className="menus__item" key={menu?.en}>
-                                {
-                                    menu?.en
-                                }
-                            </div>
+                            <Link to={menu?.link}>
+                                <div className="menus__item" key={menu?.en}>
+                                    {
+                                        menu?.name?.en
+                                    }
+                                </div>
+                            </Link>
                         )
                     }
                 )

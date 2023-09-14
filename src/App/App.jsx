@@ -1,11 +1,13 @@
-import { RestCountriesReact } from '../pages/RestCountriesReact';
+import {  RouterProvider } from 'react-router-dom';
+
+import {RestCountriesRouter} from "../router/Router"
 
 import './App.css';
 
 export function App() {
   return (
     <div className="App">
-      <RestCountriesReact />
+      <RouterProvider router={RestCountriesRouter}/>
     </div>
   );
 }
