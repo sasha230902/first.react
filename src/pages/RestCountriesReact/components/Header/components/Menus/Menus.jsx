@@ -11,8 +11,8 @@ export const Menus = () => {
                 menuTabs.map(
                     menu => {
                         return (
-                            <Link to={menu?.link}>
-                                <div className="menus__item" key={menu?.en}>
+                            <Link key={menu?.name?.en} to={menu?.link}>
+                                <div className="menus__item" >
                                     {
                                         menu?.name?.en
                                     }
