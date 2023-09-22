@@ -4,6 +4,8 @@ import { RestCountriesReact } from '../pages/RestCountriesReact';
 import { MainPage } from "../pages/RestCountriesReact/components/MainPage"
 import { CountriesPage } from "../pages/RestCountriesReact/components/CountriesPage"
 import { AboutUs } from "../pages/RestCountriesReact/components/AboutUs"
+import { CountryList } from '../pages/RestCountriesReact/components/CountriesPage/components/CountryList/CountryList';
+import { CurrentCountry } from '../pages/RestCountriesReact/components/CountriesPage/components/CurrentCountry/CurrentCountry';
 
 export const RestCountriesRouter = createBrowserRouter([
     {
@@ -20,7 +22,18 @@ export const RestCountriesRouter = createBrowserRouter([
             },
             {
                 path: "countries",
-                element: <CountriesPage />
+                element: <CountriesPage />,
+                children: [
+                    {
+                        path: "all",
+                        element: <CountryList />
+                    },
+
+                    {
+                        path: ":currentCountryID",
+                        element: <CurrentCountry />
+                    }
+                ]
             },
             {
                 path: "aboutUs",

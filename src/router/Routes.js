@@ -1,5 +1,8 @@
 export const Routes = {
     Main: "/first.react/",
-    Countries: "/first.react/countries",
-    AboutUs: "/first.react/aboutUs"
+    Countries: "/first.react/countries/all",
+    AboutUs: "/first.react/aboutUs",
+    CurrentCountry(currentCountryID) {
+        return `/first.react/countries/${currentCountryID}`
+    }
 }
